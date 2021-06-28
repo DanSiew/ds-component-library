@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800|Titillium+Web:100,200,300,400,500,600,700,800');
+
+$tfont-family-01: 'Titillium Web', sans-serif;
+$font-family-01: var(#{'--font-family-01'}, $tfont-family-01);
+$font-family-02: 'Open Sans', sans-serif;
+
+$font-size-lg-10: 4rem; //64
+$font-size-lg-09: 3.5rem; //56
+$font-size-lg-08: 3rem; //48
+$font-size-lg-07: 2.25rem; //36
+$font-size-lg-06: 1.75rem; //28
+$font-size-lg-05: 1.5rem; //24
+$font-size-lg-04: 1.25rem; //20
+$font-size-lg-03: 1.125rem; //18
+$font-size-lg-02: 1rem; //16
+$font-size-lg-01: 0.875rem; //14
+$font-size-lg-00: 0.75rem; //12
+
+$font-size-md-10: 3.625rem; //58
+$font-size-md-09: 3.125rem; //50
+$font-size-md-08: 2.75rem; //44
+$font-size-md-07: 2rem; //32
+$font-size-md-06: 1.625rem; //26
+$font-size-md-05: 1.5rem; //24
+$font-size-md-04: 1.25rem; //20
+$font-size-md-03: 1.125rem; //18
+$font-size-md-02: 1rem; //16
+$font-size-md-01: 0.875rem; //14
+$font-size-md-00: 0.75rem; //12
+
+$font-size-sm-10: 3.25rem; //52
+$font-size-sm-09: 2.75rem; //44
+$font-size-sm-08: 2.5rem; //40
+$font-size-sm-07: 1.75rem; //28
+$font-size-sm-06: 1.5rem; //24
+$font-size-sm-05: 1.375rem; //22
+$font-size-sm-04: 1.125rem; //18
+$font-size-sm-03: 1rem; //16
+$font-size-sm-02: 1rem; //16
+$font-size-sm-01: 0.875rem; //14
+$font-size-sm-00: 0.75rem; //12
+
+$font-weight-ultra-light: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+/**
+   * @deprecated (in v6.23.0) Please use $font-weight-semibold instead
+*/
+$font-weight-semi-bold: 600;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-black: 800;
+
+//line heights
+
+$line-height-header-ratio: 1.25;
+$line-height-body-ratio: 1.5;
+$line-height-display-ratio: 1;
+
+@function if-important($important) {
+  @return #{if($important, '!important', '')};
+}
+
+// font mixins
+@mixin buildFonts($font-family, $font-size-sm, $font-size-md, $font-size-lg, $font-weight, $line-height-ratio, $margin-bottom, $important: false) {
+  font-family: $font-family if-important($important);
+  font-weight: $font-weight if-important($important);
+  letter-spacing: 0 if-important($important);
+  margin-bottom: $margin-bottom if-important($important);
+
+  @include ds-screen-size('small') {
+    line-height: #{$line-height-ratio * $font-size-sm} if-important($important);
+    font-size: $font-size-sm if-important($important);
+  }
+
+  @include ds-screen-size('medium') {
+    line-height: #{$line-height-ratio * $font-size-md} if-important($important);
+    font-size: $font-size-md if-important($important);
+  }
+
+  @include ds-screen-size('large') {
+    line-height: #{$line-height-ratio * $font-size-lg} if-important($important);
+    font-size: $font-size-lg if-important($important);
+  }
+}
+
+//TITLE FONTS
+@mixin ds-title1($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-01, $font-size-sm-08, $font-size-md-08, $font-size-lg-08, $font-weight-light, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-title2($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-01, $font-size-sm-07, $font-size-md-07, $font-size-lg-07, $font-weight-light, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-title3($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-06, $font-size-md-06, $font-size-lg-06, $font-weight-light, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-title4($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-05, $font-size-md-05, $font-size-lg-05, $font-weight-regular, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-title5($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-04, $font-size-md-04, $font-size-lg-04, $font-weight-semibold, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-title6($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-03, $font-size-md-03, $font-size-lg-03, $font-weight-semibold, $line-height-header-ratio, $bottom-margin, $important);
+}
+
+//BODY FONTS
+@mixin ds-body-xl($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-06, $font-size-md-06, $font-size-lg-06, $font-weight-light, $line-height-body-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-body-lg($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-03, $font-size-md-03, $font-size-lg-03, $font-weight-light, $line-height-body-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-body-md($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-01, $font-size-md-02, $font-size-lg-02, $font-weight-regular, $line-height-body-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-body-sm($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-01, $font-size-md-01, $font-size-lg-01, $font-weight-regular, $line-height-body-ratio, $bottom-margin, $important);
+}
+
+@mixin ds-body-xs($bottom-margin: 0, $important: false) {
+  @include buildFonts($font-family-02, $font-size-sm-00, $font-size-md-00, $font-size-lg-00, $font-weight-regular, $line-height-body-ratio, $bottom-margin, $important);
+}
+
+//DISPLAY FONTS (span overriding parent tag style)
+@mixin ds-display-01($bottom-margin: 0) {
+  @include buildFonts($font-family-01, $font-size-sm-10, $font-size-md-10, $font-size-lg-10, $font-weight-light, $line-height-display-ratio, $bottom-margin);
+}
+
+@mixin ds-display-02($bottom-margin: 0) {
+  @include buildFonts($font-family-01, $font-size-sm-09, $font-size-md-09, $font-size-lg-09, $font-weight-light, $line-height-display-ratio, $bottom-margin);
+}
+
+//over ride fonts
+.ds-fontfamily01 {
+  font-family: $font-family-01 !important;
+}
+
+.ds-fontfamily02 {
+  font-family: $font-family-02 !important;
+}
+
+// over ride colours
+.ds-default-colour {
+  color: $c-neutral-01;
+}
+
+.ds-muted-colour {
+  color: $c-neutral-02;
+}
+
+.ds-highlight-colour {
+  color: $c-primary-01;
+}
+
+.ds-inverse-colour {
+  color: $c-neutral-08;
+}
+
+.ds-secondary-highlight-colour {
+  color: $c-secondary-04;
+}
+
+.ds-error-colour {
+  color: $error;
+}
