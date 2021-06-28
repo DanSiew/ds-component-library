@@ -1,7 +1,4 @@
-# React Component Library
-
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+# Design System Component Library
 
 This project skeleton was created to help people get started with creating their own React component library using:
 
@@ -44,7 +41,7 @@ To export your Storybook as static files:
 npm run storybook:export
 ```
 
-You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/react-component-library
+You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. Harvey hosted this library at: https://www.harveydelaney.com/react-component-library
 
 ### Generating New Components
 
@@ -195,7 +192,7 @@ Yes you can.
 
 [Read this section of my blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how.
 
-Atlernatively, you can check out [this branch](https://github.com/HarveyD/react-component-library/tree/code-splitting) 
+Atlernatively, you can check out [this branch](https://github.com/HarveyD/react-component-library/tree/code-splitting)
 or [this commit](https://github.com/HarveyD/react-component-library/commit/94631be5a871f3b39dbc3e9bd3e75a8ae5b3b759) to see what changes are neccesary to implement it.
 
 Please note, there's an issue with code splitting and using `rollup-plugin-postcss`. I recommend using `rollup-plugin-sass` instead for code splitting.
