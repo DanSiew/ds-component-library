@@ -1,0 +1,68 @@
+/* HTML5 display-role reset for older browsers */
+details,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+// reset other styles
+
+body {
+  line-height: 1;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+u,
+i,
+center,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-style: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// default setting for all components are block elements
+@mixin ds-component-reset($display: block) {
+  :host {
+    display: $display;
+  }
+}

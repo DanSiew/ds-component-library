@@ -1,0 +1,58 @@
+/* Visually hidden content for assistive technologies (screen readers) only */
+
+.sr-only {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+/* specifically target IE11 */
+@mixin ie11-detection {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+/* controlled focus outline */
+@mixin focus-ring() {
+  outline: none;
+  box-shadow: 0 0 1px $focus-ring-size $focus-ring-colour;
+}
+
+// hide the focus ring when the mouse is being used
+@mixin hide-focus-ring-when-using-mouse($type: 'default') {
+  .ds-using-mouse {
+    @if ($type == 'radio-button') or ($type == 'checkbox') {
+      &:focus {
+        + label::before {
+          box-shadow: none !important;
+        }
+      }
+
+      &:checked {
+        + label {
+          box-shadow: none !important;
+        }
+      }
+    } @else if ($type == 'autocomplete') {
+      & li {
+        box-shadow: none !important;
+      }
+    } @else if ($type == 'dropdownoption') {
+      &.ds-dropdownbox-option--selected {
+        box-shadow: none !important;
+      }
+    } @else {
+      box-shadow: none !important;
+    }
+  }
+}
