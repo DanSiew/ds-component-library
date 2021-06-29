@@ -1,19 +1,31 @@
-@import '../../../global/global.styles.scss';
+@import "../../../global/global.styles.scss";
 
 .ds-button {
   font-family: $font-family-01;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
+  display: inline-flex;
+  width: 100%;
+  min-width: 90px;
+  line-height: $space-03;
+  font-size: $font-size-lg-02;
+  font-weight: $font-weight-semibold;
+  border-radius: 28px;
+  align-items: center;
+  justify-content: center;
+  text-rendering: auto;
+  letter-spacing: normal;
+  text-shadow: none;
   cursor: pointer;
-  display: inline-block;
-  line-height: 1;
   &:focus {
     outline: none;
     border-radius: 3em; /* Your border radius here */
     box-shadow: $box-shadow;
   }
+
+  @include ds-screen-size("medium") {
+    max-width: 288px;
+  }
 }
+
 .ds-button--primary {
   color: white;
   background-color: $primary-01;
@@ -25,14 +37,17 @@
 }
 
 .ds-button--small {
-  font-size: 12px;
-  padding: 10px 16px;
+  font-size: $font-size-lg-00;
+  height: $space-05;
+  @include ds-screen-size("medium") {
+    max-width: 120px;
+  }
 }
 .ds-button--medium {
-  font-size: 14px;
-  padding: 11px 20px;
+  font-size: $font-size-lg-01;
+  height: $space-06;
 }
 .ds-button--large {
-  font-size: 16px;
-  padding: 12px 24px;
+  font-size: $font-size-lg-02;
+  height: $space-07;
 }

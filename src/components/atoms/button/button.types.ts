@@ -1,19 +1,26 @@
-export type ButtonType = 'primary' | 'secondary' | 'tertiary';
+export type ButtonType = "primary" | "secondary" | "tertiary";
 
+export type ButtonMode = "reverse" | "default";
+
+export type IconPosition = "left" | "right";
+
+export type ButtonSize = "small" | "medium" | "large";
+
+export type ButtonInputType = "button" | "submit";
 
 export interface ButtonProps {
+  /**
+   * The type of button to be displayed
+   */
+  type: ButtonInputType;
   /**
    * Is this the principal call to action on the page?
    */
   buttonType: ButtonType;
   /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
    * How large should the button be?
    */
-  size: "small" | "medium" | "large";
+  size: ButtonSize;
   /**
    * Button contents
    */
