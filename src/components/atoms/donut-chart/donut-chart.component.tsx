@@ -2,9 +2,10 @@ import { JSX } from "react";
 import { DonutChartProps } from "./donut-chart.types";
 import "./donut-chart.style.scss";
 
+
   export default function DsDonutChartComponent(props: DonutChartProps): JSX.Element {
     return (
-      <div data-testid="DonutChart" className="wrapper">
+      <div data-testid="DonutChart" className="donut-wrapper">
         <svg width="300px" height="300px" viewBox="0 0 42 42" className="donut">
           <circle
             className="donut-hole"

@@ -30,7 +30,11 @@ export default [
       resolve(), // allows rollup to find and bundle dependencies from node_modules
       commonjs(), // converts commonJs modules to ES6 so that they can be included in rollup bundle
       typescript({ tsconfig: "./tsconfig.json" }), // integrates typescript compilation into rollup
-      scss({ fileName: 'styles.css', silenceDeprecations: ['legacy-js-api'] }), // compiles SCSS files to CSS and includes them in the bundle
+      scss({
+        fileName: 'styles.css',
+        silenceDeprecations: ['legacy-js-api'],
+        sourceMap: true,
+      }), // compiles SCSS files to CSS and includes them in the bundle
       terser(), // minifies the output files
     ],
     external: ["react", "react-dom"],

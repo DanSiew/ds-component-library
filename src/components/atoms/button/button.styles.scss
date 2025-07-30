@@ -1,4 +1,4 @@
-@use "../../../global/styles.scss" as *;
+@import "../../../global/styles.scss";
 
 .ds-button {
   font-family: $font-family-01;
@@ -15,39 +15,46 @@
   letter-spacing: normal;
   text-shadow: none;
   cursor: pointer;
+
   &:focus {
     outline: none;
-    border-radius: 3em; /* Your border radius here */
+    border-radius: 3em;
+    /* Your border radius here */
     box-shadow: $box-shadow;
   }
 
   @include ds-screen-size("medium") {
     max-width: 288px;
   }
-}
 
-.ds-button--primary {
-  color: white;
-  background-color: $primary-01;
-}
-.ds-button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-}
 
-.ds-button--small {
-  font-size: $font-size-lg-00;
-  height: $space-05;
-  @include ds-screen-size("medium") {
-    max-width: 120px;
+  &--primary {
+    color: white;
+    background-color: $primary-01;
   }
-}
-.ds-button--medium {
-  font-size: $font-size-lg-01;
-  height: $space-06;
-}
-.ds-button--large {
-  font-size: $font-size-lg-02;
-  height: $space-07;
+
+  &--secondary {
+    color: #333;
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  }
+
+  &--small {
+    font-size: $font-size-lg-00;
+    height: $space-05;
+
+    @include ds-screen-size("medium") {
+      max-width: 120px;
+    }
+  }
+
+  &--medium {
+    font-size: $font-size-lg-01;
+    height: $space-06;
+  }
+
+  &--large {
+    font-size: $font-size-lg-02;
+    height: $space-07;
+  }
 }
