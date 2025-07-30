@@ -1,10 +1,8 @@
-import React from "react";
-
+import { JSX } from "react";
 import { DonutChartProps } from "./donut-chart.types";
 import "./donut-chart.style.scss";
 
-class DsDonutChartComponent extends React.Component<DonutChartProps> {
-  render() {
+  export default function DsDonutChartComponent(props: DonutChartProps): JSX.Element {
     return (
       <div data-testid="DonutChart" className="wrapper">
         <svg width="300px" height="300px" viewBox="0 0 42 42" className="donut">
@@ -22,30 +20,30 @@ class DsDonutChartComponent extends React.Component<DonutChartProps> {
             r="15.91549430918954"
             fill="transparent"
             stroke="#d2d3d4"
-            stroke-width="3"
+            strokeWidth="3"
           ></circle>
-          {this.props.sortValues.map((value, index) => (
-            <circle
+          {props.sortValues.map((value, index) => (
+            <circle key={index}
               className={["donut-segment", `donut-segment--${index}`].join(" ")}
               cx="21"
               cy="21"
               r="15.91549430918954"
               fill="transparent"
               stroke="#d2d3d4"
-              stroke-width="3"
-              stroke-dasharray={value}
-              stroke-dashoffset="25"
+              strokeWidth="3"
+              strokeDasharray={value}
+              strokeDashoffset="25"
             ></circle>
           ))}
 
           <g className="donut-text donut-text-1">
             <text y="50%" transform="translate(0, 2)">
-              <tspan x="50%" text-anchor="middle" className="donut-percent">
-                {this.props.percentage}
+              <tspan x="50%" textAnchor="middle" className="donut-percent">
+                {props.percentage}
               </tspan>
             </text>
             <text y="60%" transform="translate(0, 2)">
-              <tspan x="50%" text-anchor="middle" className="donut-data">
+              <tspan x="50%" textAnchor="middle" className="donut-data">
                 3450 widgets
               </tspan>
             </text>
@@ -54,6 +52,6 @@ class DsDonutChartComponent extends React.Component<DonutChartProps> {
       </div>
     );
   }
-}
 
-export default DsDonutChartComponent;
+
+

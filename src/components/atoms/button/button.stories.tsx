@@ -1,16 +1,16 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-webpack5";
 
 import DsButtonComponent from "./button.component";
-import { ButtonProps } from "./button.types";
 
 export default {
   title: "Atoms/Button",
   component: DsButtonComponent,
+   tags: ['autodocs'],
 } as Meta;
 
-const Template: Story<ButtonProps> = (args) => <DsButtonComponent {...args} />;
-
+const Template: StoryFn<typeof DsButtonComponent> = (args) => (
+  <DsButtonComponent {...args} />
+);
 export const Primary = Template.bind({});
 Primary.args = {
   type: "submit",

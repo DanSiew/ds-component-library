@@ -1,5 +1,4 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 import DsDonutChartComponent from "./donut-chart.component";
 import { DonutChartProps } from "./donut-chart.types";
 
@@ -8,7 +7,7 @@ export default {
   component: DsDonutChartComponent,
 } as Meta;
 
-const Template: Story<DonutChartProps> = (args) => (
+const Template: StoryFn<DonutChartProps> = (args) => (
   <DsDonutChartComponent {...args} />
 );
 

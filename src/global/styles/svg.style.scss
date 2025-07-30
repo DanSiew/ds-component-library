@@ -1,3 +1,5 @@
+@use './colour.style.scss' as *;
+
 .primary-fill {
   fill: $c-primary-01;
 }

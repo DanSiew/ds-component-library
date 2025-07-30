@@ -1,9 +1,5 @@
-@import "../../../global/global.styles.scss";
+@use "../../../global/styles.scss" as *;
 
-.foo-bar {
-  font-family: $font-family-01;
-  color: $neutral-01;
-}
 
 .semi-donut {
   --percentage: 0;
@@ -35,4 +31,12 @@
     transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
     animation: fillAnimation 1s ease-in;
   }
+}
+
+.semi-donut-text {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+
 }

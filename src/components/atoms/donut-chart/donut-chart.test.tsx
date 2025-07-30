@@ -1,28 +1,28 @@
-// Generated with util/create-component.js
-import React from "react";
+
 import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 import DonutChart from "./donut-chart.component";
 import { DonutChartProps } from "./donut-chart.types";
-/*
-describe("Test Component", () => {
+
+describe("DonutChart Component", () => {
   let props: DonutChartProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar",
+      sortValues: ["20 30", "30 40", "50 50"],
+      colors: ["#6495ED", "goldenrod", "#cd5c5c"],
+      percentage: "69%",
     };
   });
 
   const renderComponent = () => render(<DonutChart {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+  it("should render sortValues correctly", () => {
     const { getByTestId } = renderComponent();
 
     const component = getByTestId("DonutChart");
 
-    expect(component).toHaveTextContent("harvey was here");
+    expect(component).toHaveTextContent("69%3450 widgets");
   });
 });
-*/

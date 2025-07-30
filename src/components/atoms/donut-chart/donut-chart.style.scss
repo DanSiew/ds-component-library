@@ -1,4 +1,4 @@
-@import "../../../global/global.styles.scss";
+@use "../../../global/styles.scss" as *;
 
 .foo-bar {
   font-family: $font-family-01;

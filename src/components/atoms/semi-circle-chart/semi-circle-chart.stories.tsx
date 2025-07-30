@@ -1,5 +1,4 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
+import { Meta, StoryFn } from "@storybook/react-webpack5";
 import SemiCircleChartComponent from "./semi-circle-chart.component";
 import { SemiCircleChartProps } from "./semi-circle-chart.types";
 
@@ -11,7 +10,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<SemiCircleChartProps> = (args) => (
+const Template: StoryFn<SemiCircleChartProps> = (args) => (
   <SemiCircleChartComponent {...args} />
 );
 
@@ -19,4 +18,5 @@ export const DefaultChart = Template.bind({});
 DefaultChart.args = {
   percentage: 50,
   colourFill: "#FF3D00",
+  text: "2 days to Go"
 };

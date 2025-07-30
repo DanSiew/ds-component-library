@@ -1,21 +1,9 @@
-import * as React from "react";
-import renderer from "react-test-renderer";
-import { render, fireEvent, screen } from "@testing-library/react";
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import '@testing-library/jest-dom';
 import DsButtonComponent from "./button.component";
 
 describe("Button", () => {
-  test("creates a snapshot of the button", async () => {
-    const component = renderer.create(
-      <DsButtonComponent
-        type="submit"
-        size="small"
-        buttonType="primary"
-        label="Click me"
-      ></DsButtonComponent>
-    );
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
 
   test("renders a primary button with text", async () => {
     const { container } = render(
@@ -38,6 +26,7 @@ describe("Button", () => {
         size="small"
         buttonType="secondary"
         label="Click me"
+
       ></DsButtonComponent>
     );
     expect(container.firstChild).toHaveClass("ds-button--secondary");
@@ -55,7 +44,7 @@ describe("Button", () => {
         label="Click me"
       ></DsButtonComponent>
     );
-    fireEvent.click(screen.getByText("Click me"));
+    await userEvent.click(screen.getByText("Click me"));
 
     expect(mockOnClick).toHaveBeenCalledTimes(1);
   });

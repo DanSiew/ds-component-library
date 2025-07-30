@@ -1,3 +1,6 @@
+
+@use './breakpoint.style.scss' as *;
+
 $max-width-lg: 1280px;
 $max-width-md: 991px;
 
@@ -99,17 +102,17 @@ $gutter-lg: 32px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    padding-right: $gutter-sm/2;
-    padding-left: $gutter-sm/2;
+    padding-right: calc($gutter-sm / 2);
+    padding-left: calc($gutter-sm / 2);
 
     @include ds-screen-size('medium') {
-      padding-right: $gutter-md/2;
-      padding-left: $gutter-md/2;
+      padding-right: calc($gutter-md / 2);
+      padding-left: calc($gutter-md / 2);
     }
 
     @include ds-screen-size('large') {
-      padding-right: $gutter-lg/2;
-      padding-left: $gutter-lg/2;
+      padding-right: calc($gutter-lg / 2);
+      padding-left: calc($gutter-lg / 2);
     }
   }
 
@@ -343,12 +346,12 @@ $gutter-lg: 32px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    padding-right: $gutter-md/2;
-    padding-left: $gutter-md/2;
+    padding-right: calc($gutter-md / 2);
+    padding-left: calc($gutter-md / 2);
 
     @include ds-screen-size('large') {
-      padding-right: $gutter-lg/2;
-      padding-left: $gutter-lg/2;
+      padding-right: calc($gutter-lg / 2);
+      padding-left: calc($gutter-lg / 2);
     }
   }
 
@@ -582,8 +585,8 @@ $gutter-lg: 32px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    padding-right: $gutter-lg/2;
-    padding-left: $gutter-lg/2;
+    padding-right: calc($gutter-lg / 2);
+    padding-left: calc($gutter-lg / 2);
   }
 
   .col-lg {

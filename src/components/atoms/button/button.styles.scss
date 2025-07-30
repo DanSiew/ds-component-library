@@ -1,4 +1,4 @@
-@import "../../../global/global.styles.scss";
+@use "../../../global/styles.scss" as *;
 
 .ds-button {
   font-family: $font-family-01;

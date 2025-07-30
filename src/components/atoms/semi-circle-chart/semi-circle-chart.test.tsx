@@ -1,27 +1,25 @@
-// Generated with util/create-component.js
-import React from "react";
 import { render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
-import semi-circle-chart from "./semi-circle-chart";
-import { semi-circle-chartProps } from "./semi-circle-chart.types";
+import SemiCircleChart from "./semi-circle-chart.component";
+import { SemiCircleChartProps } from "./semi-circle-chart.types";
 
-describe("Test Component", () => {
-  let props: semi-circle-chartProps;
+describe("Test SemiCircleChartComponent", () => {
+  let props: SemiCircleChartProps;
 
   beforeEach(() => {
     props = {
-      foo: "bar"
+      percentage: 50,
+      colourFill: "#FF3D00",
+      text: "2 days to Go",
     };
   });
 
-  const renderComponent = () => render(<semi-circle-chart {...props} />);
+  const renderComponent = () => render(<SemiCircleChart {...props} />);
 
-  it("should render foo text correctly", () => {
-    props.foo = "harvey was here";
+  it("should render Semi Circle Chart correctly", () => {
     const { getByTestId } = renderComponent();
-
-    const component = getByTestId("semi-circle-chart");
-
-    expect(component).toHaveTextContent("harvey was here");
+    const component = getByTestId("SemiCircleChartText");
+    expect(component).toHaveTextContent("2 days to Go");
   });
 });

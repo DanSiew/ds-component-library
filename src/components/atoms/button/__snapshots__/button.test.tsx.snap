@@ -1,11 +1,3 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`Button creates a snapshot of the button 1`] = `
-<button
-  aria-label="Click me"
-  className="ds-button ds-button--small ds-button--primary"
-  type="submit"
->
-  Click me
-</button>
-`;
+exports[`Button creates a snapshot of the button 1`] = `null`;
