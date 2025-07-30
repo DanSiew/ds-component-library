@@ -71,14 +71,30 @@ Your components can then be imported and used in that project.
 
 ```TSX
 import React from "react";
-import { TestComponent } from "@dansiew-component-library";
+import { DsButton } from "ds-component-library";
+import "ds-component-library/dist/styles.css";
 
-const App = () => (
-  <div className="app-container">
-    <h1>Hello I'm consuming the component library</h1>
-    <TestComponent theme="primary" />
-  </div>
-);
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div>
+      <h1>Test App</h1>
+      <h1>{count}</h1>
+      <div className="card">
+        <DsButton
+          label="Count Up"
+          onClick={() => setCount((count) => count + 1)}
+          type="button"
+          buttonType="primary"
+          size="medium"
+          event=""
+        />
+    </>
+  );
+};
 
 export default App;
 ```
