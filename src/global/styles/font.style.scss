@@ -1,7 +1,6 @@
 @use './colour.style.scss' as *;
 @use './breakpoint.style.scss' as *;
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800|Titillium+Web:100,200,300,400,500,600,700,800');
 
 $tfont-family-01: 'Titillium Web', sans-serif;
 $font-family-01: var(#{'--font-family-01'}, $tfont-family-01);

@@ -9,26 +9,26 @@
 
   .donut {
     &-ring {
-      stroke: #ebebeb;
+      stroke: $neutral-06;
     }
 
     &-segment {
       transform-origin: center;
-      stroke: #ff6200;
+      stroke: $tertiary-03;
     }
 
     &-segment--0 {
-      stroke: #6495ed;
+      stroke: $secondary-04;
       animation: donut1 3s;
     }
 
     &-segment--1 {
-      stroke: #cd5c5c;
+      stroke: $tertiary-04;
       animation: donut1 3s;
     }
 
     &-segment--2 {
-      stroke: aqua;
+      stroke: $primary-02;
       animation: donut1 3s;
     }
 
@@ -38,11 +38,11 @@
 
     &-text {
       font-family: Arial, Helvetica, sans-serif;
-      fill: #ff6200;
+      fill: $tertiary-03;
     }
 
     &-text-1 {
-      fill: aqua;
+      fill: $primary-02;
     }
 
     &-label {
@@ -66,8 +66,8 @@
       transform: translateY(0.5em);
       text-align: center;
       text-anchor: middle;
-      color: #666;
-      fill: #666;
+      color: $neutral-01;
+      fill: $neutral-01;
       animation: donutfadelong 1s;
     }
 
@@ -91,3 +91,4 @@
       }
     }
   }
+}

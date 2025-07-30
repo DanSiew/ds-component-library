@@ -14,15 +14,6 @@
 .hide {
   display: none;
 }
-
-/* specifically target IE11 */
-@mixin ie11-detection {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }
-}
-
-/* controlled focus outline */
 @mixin focus-ring() {
   outline: none;
   box-shadow: 0 0 1px $focus-ring-size $focus-ring-colour;

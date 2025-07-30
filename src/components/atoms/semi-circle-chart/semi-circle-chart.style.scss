@@ -1,8 +1,8 @@
-
+@import "../../../global/styles.scss";
 
 .semi-donut {
   --percentage: 0;
-  --fill: #ff0;
+  --fill: $secondary-01;
   width: 300px;
   height: 150px;
   position: relative;
@@ -15,13 +15,13 @@
   align-items: flex-end;
   justify-content: center;
   box-sizing: border-box;
+
   &:after {
     content: "";
     width: 300px;
     height: 300px;
     border: 50px solid;
-    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill)
-      var(--fill);
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
     position: absolute;
     border-radius: 80%;
     left: 0;
@@ -30,12 +30,12 @@
     transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
     animation: fillAnimation 1s ease-in;
   }
-}
 
-.semi-donut-text {
-  font-size: 22px;
-  font-weight: 600;
-  text-align: center;
-  color: #000;
+  &-text {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    color: $neutral-01;
 
+  }
 }

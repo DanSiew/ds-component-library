@@ -1,7 +1,5 @@
 @use './colour-functions.style.scss';
 
-// stylelint-disable color-no-hex
-
 // Palette Colour
 
 // Primary Colours
@@ -14,27 +12,6 @@ $c-primary-01-rgb: var(#{'--c-primary-01-rgb'}, hextorgbstring($primary-01));
 $c-primary-01-shade-20: var(#{'--c-primary-01-shade-20'}, shade($primary-01, 20));
 $c-primary-01-shade-20-rgb: var(#{'--c-primary-01-shade-20-rgb'}, hextorgbstring(shade($primary-01, 20)));
 
-// Primary Colour Tints
-$c-primary-01-tint-90: var(#{'--c-primary-01-tint-90'}, tint($primary-01, 90));
-$c-primary-01-tint-80: var(#{'--c-primary-01-tint-80'}, tint($primary-01, 80));
-$c-primary-01-tint-70: var(#{'--c-primary-01-tint-70'}, tint($primary-01, 70));
-$c-primary-01-tint-60: var(#{'--c-primary-01-tint-60'}, tint($primary-01, 60));
-$c-primary-01-tint-50: var(#{'--c-primary-01-tint-50'}, tint($primary-01, 50));
-$c-primary-01-tint-40: var(#{'--c-primary-01-tint-40'}, tint($primary-01, 40));
-$c-primary-01-tint-30: var(#{'--c-primary-01-tint-30'}, tint($primary-01, 30));
-$c-primary-01-tint-20: var(#{'--c-primary-01-tint-20'}, tint($primary-01, 20));
-$c-primary-01-tint-10: var(#{'--c-primary-01-tint-10'}, tint($primary-01, 10));
-
-$c-primary-02-tint-90: var(#{'--c-primary-02-tint-90'}, tint($primary-02, 90));
-$c-primary-02-tint-80: var(#{'--c-primary-02-tint-80'}, tint($primary-02, 80));
-$c-primary-02-tint-70: var(#{'--c-primary-02-tint-70'}, tint($primary-02, 70));
-$c-primary-02-tint-60: var(#{'--c-primary-02-tint-60'}, tint($primary-02, 60));
-$c-primary-02-tint-50: var(#{'--c-primary-02-tint-50'}, tint($primary-02, 50));
-$c-primary-02-tint-40: var(#{'--c-primary-02-tint-40'}, tint($primary-02, 40));
-$c-primary-02-tint-30: var(#{'--c-primary-02-tint-30'}, tint($primary-02, 30));
-$c-primary-02-tint-20: var(#{'--c-primary-02-tint-20'}, tint($primary-02, 20));
-$c-primary-02-tint-10: var(#{'--c-primary-02-tint-10'}, tint($primary-02, 10));
-
 // Secondary Colours
 $secondary-01: #ffe344;
 $secondary-02: #f6a623;
@@ -45,46 +22,6 @@ $c-secondary-02: var(#{'--c-secondary-02'}, $secondary-02);
 $c-secondary-03: var(#{'--c-secondary-03'}, $secondary-03);
 $c-secondary-04: var(#{'--c-secondary-04'}, $secondary-04);
 
-// Secondary Colour Tints
-$c-secondary-01-tint-90: var(#{'--c-secondary-01-tint-90'}, tint($secondary-01, 90));
-$c-secondary-01-tint-80: var(#{'--c-secondary-01-tint-80'}, tint($secondary-01, 80));
-$c-secondary-01-tint-70: var(#{'--c-secondary-01-tint-70'}, tint($secondary-01, 70));
-$c-secondary-01-tint-60: var(#{'--c-secondary-01-tint-60'}, tint($secondary-01, 60));
-$c-secondary-01-tint-50: var(#{'--c-secondary-01-tint-50'}, tint($secondary-01, 50));
-$c-secondary-01-tint-40: var(#{'--c-secondary-01-tint-40'}, tint($secondary-01, 40));
-$c-secondary-01-tint-30: var(#{'--c-secondary-01-tint-30'}, tint($secondary-01, 30));
-$c-secondary-01-tint-20: var(#{'--c-secondary-01-tint-20'}, tint($secondary-01, 20));
-$c-secondary-01-tint-10: var(#{'--c-secondary-01-tint-10'}, tint($secondary-01, 10));
-
-$c-secondary-02-tint-90: var(#{'--c-secondary-02-tint-90'}, tint($secondary-02, 90));
-$c-secondary-02-tint-80: var(#{'--c-secondary-02-tint-80'}, tint($secondary-02, 80));
-$c-secondary-02-tint-70: var(#{'--c-secondary-02-tint-70'}, tint($secondary-02, 70));
-$c-secondary-02-tint-60: var(#{'--c-secondary-02-tint-60'}, tint($secondary-02, 60));
-$c-secondary-02-tint-50: var(#{'--c-secondary-02-tint-50'}, tint($secondary-02, 50));
-$c-secondary-02-tint-40: var(#{'--c-secondary-02-tint-40'}, tint($secondary-02, 40));
-$c-secondary-02-tint-30: var(#{'--c-secondary-02-tint-30'}, tint($secondary-02, 30));
-$c-secondary-02-tint-20: var(#{'--c-secondary-02-tint-20'}, tint($secondary-02, 20));
-$c-secondary-02-tint-10: var(#{'--c-secondary-02-tint-10'}, tint($secondary-02, 10));
-
-$c-secondary-03-tint-90: var(#{'--c-secondary-03-tint-90'}, tint($secondary-03, 90));
-$c-secondary-03-tint-80: var(#{'--c-secondary-03-tint-80'}, tint($secondary-03, 80));
-$c-secondary-03-tint-70: var(#{'--c-secondary-03-tint-70'}, tint($secondary-03, 70));
-$c-secondary-03-tint-60: var(#{'--c-secondary-03-tint-60'}, tint($secondary-03, 60));
-$c-secondary-03-tint-50: var(#{'--c-secondary-03-tint-50'}, tint($secondary-03, 50));
-$c-secondary-03-tint-40: var(#{'--c-secondary-03-tint-40'}, tint($secondary-03, 40));
-$c-secondary-03-tint-30: var(#{'--c-secondary-03-tint-30'}, tint($secondary-03, 30));
-$c-secondary-03-tint-20: var(#{'--c-secondary-03-tint-20'}, tint($secondary-03, 20));
-$c-secondary-03-tint-10: var(#{'--c-secondary-03-tint-10'}, tint($secondary-03, 10));
-
-$c-secondary-04-tint-90: var(#{'--c-secondary-04-tint-90'}, tint($secondary-04, 90));
-$c-secondary-04-tint-80: var(#{'--c-secondary-04-tint-80'}, tint($secondary-04, 80));
-$c-secondary-04-tint-70: var(#{'--c-secondary-04-tint-70'}, tint($secondary-04, 70));
-$c-secondary-04-tint-60: var(#{'--c-secondary-04-tint-60'}, tint($secondary-04, 60));
-$c-secondary-04-tint-50: var(#{'--c-secondary-04-tint-50'}, tint($secondary-04, 50));
-$c-secondary-04-tint-40: var(#{'--c-secondary-04-tint-40'}, tint($secondary-04, 40));
-$c-secondary-04-tint-30: var(#{'--c-secondary-04-tint-30'}, tint($secondary-04, 30));
-$c-secondary-04-tint-20: var(#{'--c-secondary-04-tint-20'}, tint($secondary-04, 20));
-$c-secondary-04-tint-10: var(#{'--c-secondary-04-tint-10'}, tint($secondary-04, 10));
 
 // Tertiary Colours
 $tertiary-01: #4cd964;
@@ -95,47 +32,6 @@ $c-tertiary-01: var(#{'--c-tertiary-01'}, $tertiary-01);
 $c-tertiary-02: var(#{'--c-tertiary-02'}, $tertiary-02);
 $c-tertiary-03: var(#{'--c-tertiary-03'}, $tertiary-03);
 $c-tertiary-04: var(#{'--c-tertiary-04'}, $tertiary-04);
-
-// Tertiary Colour Tints
-$c-tertiary-01-tint-90: var(#{'--c-tertiary-01-tint-90'}, tint($tertiary-01, 90));
-$c-tertiary-01-tint-80: var(#{'--c-tertiary-01-tint-80'}, tint($tertiary-01, 80));
-$c-tertiary-01-tint-70: var(#{'--c-tertiary-01-tint-70'}, tint($tertiary-01, 70));
-$c-tertiary-01-tint-60: var(#{'--c-tertiary-01-tint-60'}, tint($tertiary-01, 60));
-$c-tertiary-01-tint-50: var(#{'--c-tertiary-01-tint-50'}, tint($tertiary-01, 50));
-$c-tertiary-01-tint-40: var(#{'--c-tertiary-01-tint-40'}, tint($tertiary-01, 40));
-$c-tertiary-01-tint-30: var(#{'--c-tertiary-01-tint-30'}, tint($tertiary-01, 30));
-$c-tertiary-01-tint-20: var(#{'--c-tertiary-01-tint-20'}, tint($tertiary-01, 20));
-$c-tertiary-01-tint-10: var(#{'--c-tertiary-01-tint-10'}, tint($tertiary-01, 10));
-
-$c-tertiary-02-tint-90: var(#{'--c-tertiary-02-tint-90'}, tint($tertiary-02, 90));
-$c-tertiary-02-tint-80: var(#{'--c-tertiary-02-tint-80'}, tint($tertiary-02, 80));
-$c-tertiary-02-tint-70: var(#{'--c-tertiary-02-tint-70'}, tint($tertiary-02, 70));
-$c-tertiary-02-tint-60: var(#{'--c-tertiary-02-tint-60'}, tint($tertiary-02, 60));
-$c-tertiary-02-tint-50: var(#{'--c-tertiary-02-tint-50'}, tint($tertiary-02, 50));
-$c-tertiary-02-tint-40: var(#{'--c-tertiary-02-tint-40'}, tint($tertiary-02, 40));
-$c-tertiary-02-tint-30: var(#{'--c-tertiary-02-tint-30'}, tint($tertiary-02, 30));
-$c-tertiary-02-tint-20: var(#{'--c-tertiary-02-tint-20'}, tint($tertiary-02, 20));
-$c-tertiary-02-tint-10: var(#{'--c-tertiary-02-tint-10'}, tint($tertiary-02, 10));
-
-$c-tertiary-03-tint-90: var(#{'--c-tertiary-03-tint-90'}, tint($tertiary-03, 90));
-$c-tertiary-03-tint-80: var(#{'--c-tertiary-03-tint-80'}, tint($tertiary-03, 80));
-$c-tertiary-03-tint-70: var(#{'--c-tertiary-03-tint-70'}, tint($tertiary-03, 70));
-$c-tertiary-03-tint-60: var(#{'--c-tertiary-03-tint-60'}, tint($tertiary-03, 60));
-$c-tertiary-03-tint-50: var(#{'--c-tertiary-03-tint-50'}, tint($tertiary-03, 50));
-$c-tertiary-03-tint-40: var(#{'--c-tertiary-03-tint-40'}, tint($tertiary-03, 40));
-$c-tertiary-03-tint-30: var(#{'--c-tertiary-03-tint-30'}, tint($tertiary-03, 30));
-$c-tertiary-03-tint-20: var(#{'--c-tertiary-03-tint-20'}, tint($tertiary-03, 20));
-$c-tertiary-03-tint-10: var(#{'--c-tertiary-03-tint-10'}, tint($tertiary-03, 10));
-
-$c-tertiary-04-tint-90: var(#{'--c-tertiary-03-tint-90'}, tint($tertiary-04, 90));
-$c-tertiary-04-tint-80: var(#{'--c-tertiary-03-tint-80'}, tint($tertiary-04, 80));
-$c-tertiary-04-tint-70: var(#{'--c-tertiary-03-tint-70'}, tint($tertiary-04, 70));
-$c-tertiary-04-tint-60: var(#{'--c-tertiary-03-tint-60'}, tint($tertiary-04, 60));
-$c-tertiary-04-tint-50: var(#{'--c-tertiary-03-tint-50'}, tint($tertiary-04, 50));
-$c-tertiary-04-tint-40: var(#{'--c-tertiary-03-tint-40'}, tint($tertiary-04, 40));
-$c-tertiary-04-tint-30: var(#{'--c-tertiary-03-tint-30'}, tint($tertiary-04, 30));
-$c-tertiary-04-tint-20: var(#{'--c-tertiary-03-tint-20'}, tint($tertiary-04, 20));
-$c-tertiary-04-tint-10: var(#{'--c-tertiary-03-tint-10'}, tint($tertiary-04, 10));
 
 // Neutral Colours
 $neutral-01: #2b2e31;
