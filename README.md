@@ -41,10 +41,6 @@ npm run storybook:export
 
 You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc.
 
-### Generating New Components
-
-Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
-
 ### Installing Component Library Locally
 
 Let's say you have another project (`test-app`) on your machine that you want to try installing the component library into without having to first publish the component library. In the `test-app` directory, you can run:
@@ -95,22 +91,7 @@ export default App;
 
 #### Less or Stylus
 
-The Rollup plugin `rollup-plugin-postcss` supports Sass, Less and Stylus:
-
-- For Stylus, install stylus: `yarn add stylus --dev`
-- For Less, install less: `yarn add less --dev`
-
-You can then remove `node-sass` from your dependencies.
-
 #### CSS Modules
-
-If you want to use CSS Modules, update `postcss` in `rollup-config.js` to:
-
-```
-
-postcss({
-modules: true
-})
 
 ```
 
