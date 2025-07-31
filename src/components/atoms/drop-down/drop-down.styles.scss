@@ -1,0 +1,120 @@
+@import "../../../global/styles.scss";
+
+.dropdown-container {
+    font-family: $font-family-01;
+    display: flex;
+    flex-direction: column;
+
+
+
+    .dropdown {
+        &__wrapper {
+            margin: 0 0 4px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        &__label {
+            text-align: left;
+            padding: 8px 4px 8px 0;
+            font-size: 16px;
+        }
+
+        &__input {
+            border: 1px solid $neutral-04;
+            border-radius: 4px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 18px;
+            padding: 10px 42px 10px 16px;
+            position: relative;
+            text-overflow: ellipsis;
+            transition: 0.8s padding-bottom 0.3s;
+            width: 100%;
+
+            &::placeholder {
+                color: $neutral-02;
+                transition: 0.1s all;
+            }
+
+            &--open {
+                border-color: $neutral-02;
+                z-index: 2;
+
+                &::placeholder {
+                    color: #000;
+                }
+            }
+
+            &:focus {
+                border-color: $color_celeste_approx;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.2);
+            }
+        }
+
+
+
+        &__input-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #888;
+            font-size: 1.2em;
+
+            &--open {
+                transform: rotate(180deg);
+            }
+        }
+
+        &__options {
+            background-color: #fff;
+            border: 1px solid $color_celeste_approx;
+            border-radius: 4px;
+            box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+            font-size: 1em;
+            height: auto;
+            list-style: none;
+            margin: -3px 0 0;
+            max-height: 225px;
+            min-height: 100px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 2px 0 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &__option {
+            border-bottom: 1px solid $color_celeste_approx;
+            color: #000;
+            cursor: pointer;
+            display: block;
+            font-size: 14px;
+            line-height: 1.4;
+            padding: 16px 0 16px 16px;
+            text-align: left;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            &--selected {
+                background-color: $color_perano;
+            }
+
+            &--active {
+                background-color: $color_steel_blue_approx;
+                color: #fff;
+            }
+
+            &:focus {
+                background-color: $color_celeste_approx;
+                outline: none;
+            }
+        }
+
+    }
+}
