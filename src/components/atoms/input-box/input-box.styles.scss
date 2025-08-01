@@ -1,4 +1,4 @@
-@import "../../../global/styles.scss";
+@use "../../../global/styles.scss" as *;
 
 .input-box-container {
     font-family: $font-family-01;

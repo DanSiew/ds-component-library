@@ -5,9 +5,7 @@ import typescript from "@rollup/plugin-typescript";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json" with { type: 'json' };
-import scss from 'rollup-plugin-scss';
-
-
+import sass from 'rollup-plugin-sass';
 
 export default [
   {
@@ -30,11 +28,14 @@ export default [
       resolve(), // allows rollup to find and bundle dependencies from node_modules
       commonjs(), // converts commonJs modules to ES6 so that they can be included in rollup bundle
       typescript({ tsconfig: "./tsconfig.json" }), // integrates typescript compilation into rollup
-      scss({
-        fileName: 'styles.css',
+      sass({
+        api: 'modern',
+        output: 'dist/styles.css',
+        options: {
+          includePaths: ['src'], // include paths for `sass` files
+        },
         silenceDeprecations: ['legacy-js-api'],
-        sourceMap: true,
-      }), // compiles SCSS files to CSS and includes them in the bundle
+      }), // compiles SASS files to CSS
       terser(), // minifies the output files
     ],
     external: ["react", "react-dom"],
