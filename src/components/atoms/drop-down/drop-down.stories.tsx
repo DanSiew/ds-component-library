@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from "@storybook/react-webpack5";
-import Dropdown, { DropdownProps } from "./drop-down.component";
+import Dropdown from "./drop-down.component";
+import { DropdownProps } from "./drop-down.types";
 
 export default {
   title: "Atoms/Dropdown",
@@ -10,7 +11,10 @@ const Template: StoryFn<DropdownProps> = (args) => <Dropdown {...args} />;
 
 export const DropdownWithItems = Template.bind({});
 DropdownWithItems.args = {
-  label: "Select a state",
+  label: "State",
+  name: "state",
+  placeholder: "Select a state",
+  required: true,
   options: [
     { label: "Australian Capital Territory", value: "ACT" },
     { label: "New South Wales", value: "NSW" },
@@ -26,7 +30,10 @@ DropdownWithItems.args = {
 };
 export const DropdownWithSelectedItem = Template.bind({});
 DropdownWithSelectedItem.args = {
-  label: "Select a state",
+  label: "State",
+  name: "state", 
+  placeholder: "Select a state",
+  required: false,
   options: [
     { label: "Australian Capital Territory", value: "ACT" },
     { label: "New South Wales", value: "NSW" },

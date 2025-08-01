@@ -116,5 +116,12 @@
             }
         }
 
+        &__error {
+            color: $error-01;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: left;
+        }
+
     }
 }

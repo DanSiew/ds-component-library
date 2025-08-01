@@ -1,22 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./drop-down.styles.scss";
 import { FaChevronDown } from "react-icons/fa6";
-
-export interface DropdownProps {
-  label: string;
-  placeholder?: string;
-  maxWidth: number;
-  options: { label: string; value: string }[];
-  selectedItem?: { label: string; value: string } | null;
-  handleChange?: (option: { label: string; value: string }) => void;
-}
-
-export interface DropdownItem {
-  item: { label: string; value: string };
-  isFocused: boolean;
-  selectedOption: { label: string; value: string } | null;
-  selectItem: (option: { label: string; value: string }) => void;
-}
+import { DropdownItem, DropdownProps } from "./drop-down.types";
 
 function FocusableListItem(props: DropdownItem) {
   const itemRef = useRef<HTMLLIElement>(null);
@@ -51,7 +36,7 @@ function FocusableListItem(props: DropdownItem) {
 
 function Dropdown(props: DropdownProps) {
   const [open, setOpen] = useState(false);
-
+  const [error, setError] = useState(false);
   const [selectedOption, setSelectedOption] = useState<{
     label: string;
     value: string;
@@ -63,6 +48,12 @@ function Dropdown(props: DropdownProps) {
   const [focusIndex, setFocusIndex] = useState(itemIndex >= 0 ? itemIndex : 0);
   const componentRef = useRef<HTMLDivElement>(null);
 
+  const handleBlur = () => {
+    if (props.required && !open && selectedOption === null) {
+      setError(true);
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       // Check if the clicked element is outside the component's ref
@@ -71,6 +62,9 @@ function Dropdown(props: DropdownProps) {
         !componentRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
+        if (props.required && !open && selectedOption === null) {
+          setError(true);
+        }
       }
     };
 
@@ -87,6 +81,7 @@ function Dropdown(props: DropdownProps) {
   };
   const selectItem = (option: { label: string; value: string }) => {
     setSelectedOption(option);
+    setError(false);
     if (props.handleChange) {
       props.handleChange(option);
     }
@@ -130,9 +125,9 @@ function Dropdown(props: DropdownProps) {
       <div className="dropdown__label">{props.label}</div>
       <div className="dropdown__wrapper">
         <input
-          id="dropdown__input"
+          id={`dropdown-${props.name}`}
           type="text"
-          name="dropdown__input"
+          name={props.name}
           placeholder={
             props.placeholder ? props.placeholder : "Select an option"
           }
@@ -145,6 +140,7 @@ function Dropdown(props: DropdownProps) {
           value={selectedOption ? selectedOption.label : ""}
           onClick={toggleDropdown}
           onKeyDown={handleKeyPress}
+          onBlur={handleBlur}
           readOnly
         />
         <FaChevronDown
@@ -159,11 +155,18 @@ function Dropdown(props: DropdownProps) {
           }}
           onClick={toggleDropdown}
         />
+        {error && (
+          <div className="dropdown__error">{props.label} is required</div>
+        )}
         {open && (
           <ul
+            role="listbox"
             className={`dropdown__options ${
               open ? "dropdown__options--open" : ""
             }`}
+            style={{
+              maxWidth: props.maxWidth > 0 ? props.maxWidth + "px" : "100%",
+            }}
             onKeyDown={handleListKeyPress}
           >
             {props.options.map((option, index) => (

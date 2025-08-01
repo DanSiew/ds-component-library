@@ -11,7 +11,6 @@ const config: StorybookConfig = {
   "addons": [
     "@storybook/addon-webpack5-compiler-swc",
     "@storybook/addon-docs",
-    "@storybook/addon-onboarding",
     '@storybook/preset-scss'
   ],
   "framework": {

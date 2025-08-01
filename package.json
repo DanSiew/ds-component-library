@@ -51,7 +51,6 @@
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
     "@storybook/addon-docs": "^9.0.18",
-    "@storybook/addon-onboarding": "^9.0.18",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react-webpack5": "^9.0.18",
