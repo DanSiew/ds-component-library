@@ -1,0 +1,59 @@
+@import "../../../global/styles.scss";
+
+.input-box-container {
+    font-family: $font-family-01;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .input-box {
+        &__wrapper {
+            margin: 0 0 8px 0;
+            position: relative;
+            width: calc(100% - 30px);
+        }
+
+        &__label {
+            color: #000;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            text-align: left;
+        }
+
+        &__input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid $neutral-04;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #000;
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 16px;
+
+            &:focus {
+                border-color: $color_celeste_approx;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.2);
+            }
+
+            &:disabled {
+                background: $neutral-02;
+            }
+
+            &::placeholder {
+                color: $neutral-02;
+            }
+        }
+
+        &__error {
+            color: $error-01;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: left;
+        }
+    }
+
+}
