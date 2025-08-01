@@ -16,18 +16,20 @@ function InputBox(props: InputBoxProps) {
     }
   };
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+    const newValue = e.target.value;
+    setValue(newValue);
     if (props.handleChange) {
-      props.handleChange(e.target.value);
+      props.handleChange(newValue);
     }
     let newError: InputBoxError[] = [];
-    if (props.minValue > 0 && value.length < props.minValue - 1) {
+    if (props.minValue > 0 && newValue.length < props.minValue) {
       newError.push({
         errorMessage: `${props.label} must be at least ${props.minValue} characters`,
         type: "minLength",
       });
     } else {
-      if (props.pattern && !new RegExp(props.pattern).test(value)) {
+      if (props.pattern && !new RegExp(props.pattern).test(newValue)) {
+        
         newError.push({
           errorMessage:
             props.patternErrorMessage || `${props.label} is invalid`,
@@ -35,7 +37,7 @@ function InputBox(props: InputBoxProps) {
         });
       }
     }
-    if (props.maxValue > 0 && value.length > props.maxValue) {
+    if (props.maxValue > 0 && newValue.length > props.maxValue) {
       newError.push({
         errorMessage: `${props.label} must be at most ${props.maxValue} characters`,
         type: "maxLength",
