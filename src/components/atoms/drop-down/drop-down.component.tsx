@@ -42,6 +42,7 @@ function Dropdown(props: DropdownProps) {
     value: string;
   } | null>(props.selectedItem || null);
 
+
   const itemIndex = props.options.findIndex(
     (option) => option.value === selectedOption?.value
   );
@@ -62,9 +63,7 @@ function Dropdown(props: DropdownProps) {
         !componentRef.current.contains(event.target as Node)
       ) {
         setOpen(false);
-        if (props.required && !open && selectedOption === null) {
-          setError(true);
-        }
+        handleBlur();
       }
     };
 
@@ -74,7 +73,7 @@ function Dropdown(props: DropdownProps) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [selectedOption]);
 
   const toggleDropdown = () => {
     setOpen((prevOpen) => !prevOpen);
