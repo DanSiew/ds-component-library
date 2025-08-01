@@ -18,12 +18,15 @@ InputBoxWithValidation.args = {
   maxWidth: 300,
   minValue: 2,
   maxValue: 40,
+  pattern: "^[a-zA-Z ]+$",
+  patternErrorMessage: "Name can only contain letters and spaces",
   handleChange: (value: any) => console.log("Entered name:", value),
 }
 export const InputBoxWithoutValidation = Template.bind({});
 InputBoxWithoutValidation.args = {
   label: "Name",
   name: "name",
+  value: "John Doe",
   placeholder: "Enter your name",
   required: false,
   maxWidth: 0,

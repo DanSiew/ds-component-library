@@ -3,7 +3,7 @@ import "./input-box.styles.scss";
 import { InputBoxError, InputBoxProps } from "./input-box.types";
 
 function InputBox(props: InputBoxProps) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState<string>(props.value || "");
   const [error, setError] = useState<InputBoxError[]>();
 
   const handleBlur = () => {
@@ -14,11 +14,26 @@ function InputBox(props: InputBoxProps) {
         type: "required",
       });
     }
-    if (props.minValue > 0 && value.length < props.minValue) {
+  };
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+    if (props.handleChange) {
+      props.handleChange(e.target.value);
+    }
+    let newError: InputBoxError[] = [];
+    if (props.minValue > 0 && value.length < props.minValue - 1) {
       newError.push({
         errorMessage: `${props.label} must be at least ${props.minValue} characters`,
         type: "minLength",
       });
+    } else {
+      if (props.pattern && !new RegExp(props.pattern).test(value)) {
+        newError.push({
+          errorMessage:
+            props.patternErrorMessage || `${props.label} is invalid`,
+          type: "pattern",
+        });
+      }
     }
     if (props.maxValue > 0 && value.length > props.maxValue) {
       newError.push({
@@ -26,6 +41,7 @@ function InputBox(props: InputBoxProps) {
         type: "maxLength",
       });
     }
+
     setError(newError);
   };
 
@@ -44,12 +60,7 @@ function InputBox(props: InputBoxProps) {
             maxWidth: props.maxWidth > 0 ? props.maxWidth + "px" : "100%",
           }}
           value={value}
-          onChange={(e) => {
-            setValue(e.target.value);
-            if (props.handleChange) {
-              props.handleChange(e.target.value);
-            }
-          }}
+          onChange={onChange}
           onBlur={handleBlur}
         />
       </div>

@@ -1,12 +1,14 @@
 export interface InputBoxProps {
   name: string;
   label: string;
+  value?: string;
   placeholder?: string;
   maxWidth: number;
   minValue: number;
   maxValue: number;
   required?: boolean;
-  errorMessage?: string;
+  pattern?: string;
+  patternErrorMessage?: string;
   handleChange?: (value: string) => void;
 }
 
