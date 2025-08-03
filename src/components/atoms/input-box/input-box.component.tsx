@@ -29,7 +29,6 @@ function InputBox(props: InputBoxProps) {
       });
     } else {
       if (props.pattern && !new RegExp(props.pattern).test(newValue)) {
-        
         newError.push({
           errorMessage:
             props.patternErrorMessage || `${props.label} is invalid`,
@@ -57,7 +56,10 @@ function InputBox(props: InputBoxProps) {
           name={props.name}
           placeholder={props.placeholder ? props.placeholder : "Enter value"}
           aria-label={props.label}
-          className="input-box__input"
+          className={
+            "input-box__input " +
+            (error && error?.length > 0 ? "input-box__input--error" : "")
+          }
           style={{
             maxWidth: props.maxWidth > 0 ? props.maxWidth + "px" : "100%",
           }}

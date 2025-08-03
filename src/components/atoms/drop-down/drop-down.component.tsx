@@ -42,7 +42,6 @@ function Dropdown(props: DropdownProps) {
     value: string;
   } | null>(props.selectedItem || null);
 
-
   const itemIndex = props.options.findIndex(
     (option) => option.value === selectedOption?.value
   );
@@ -132,7 +131,9 @@ function Dropdown(props: DropdownProps) {
           }
           aria-haspopup="listbox"
           aria-label={props.label}
-          className="dropdown__input"
+          className={
+            "dropdown__input " + (error ? " dropdown__input--error" : "")
+          }
           style={{
             maxWidth: props.maxWidth > 0 ? props.maxWidth + "px" : "100%",
           }}

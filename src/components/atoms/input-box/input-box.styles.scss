@@ -33,6 +33,11 @@
             line-height: 40px;
             padding: 0 16px;
 
+            &--error {
+                border-color: $error-01;
+                box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+            }
+
             &:focus {
                 border-color: $color_celeste_approx;
                 outline: none;
@@ -42,6 +47,7 @@
             &:disabled {
                 background: $neutral-02;
             }
+
 
             &::placeholder {
                 color: $neutral-02;
